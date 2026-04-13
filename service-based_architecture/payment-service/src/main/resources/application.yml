@@ -1,0 +1,29 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:h2:mem:paymentdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+app:
+  jwt:
+    secret: ChangeThisSecretKeyForDemoOnly1234567890
+    expiration-ms: 86400000
+
+clients:
+  order-service:
+    base-url: http://localhost:8083
+  notification-service:
+    base-url: http://localhost:8085
+
+retry:
+  max-attempts: 3
+  delay-ms: 300

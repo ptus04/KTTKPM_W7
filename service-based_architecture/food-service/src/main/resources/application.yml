@@ -1,0 +1,20 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: food-service
+  datasource:
+    url: jdbc:h2:mem:fooddb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    defer-datasource-initialization: true
+
+app:
+  jwt:
+    secret: ChangeThisSecretKeyForDemoOnly1234567890
+    expiration-ms: 86400000
